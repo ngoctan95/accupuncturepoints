@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/common"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Hình tổng thể"/>
+        <item
+            android:id="@+id/sicks"
+            android:icon="@drawable/ic_sicks"
+            android:title="Tra cứu bệnh"/>
+        <item
+            android:id="@+id/accs"
+            android:icon="@drawable/ic_accus"
+            android:title="Tra cứu huyệt"/>
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_search"
+            android:title="Tìm kiếm"/>
+        <item
+            android:id="@+id/points"
+            android:icon="@drawable/ic_point"
+            android:title="Điểm tích lũy"/>
+        <item
+            android:id="@+id/marked"
+            android:icon="@drawable/ic_marked"
+            android:title="Trắc nghiệm"/>
+
+    </group>
+
+    <item android:title="Mở rộng">
+        <menu>
+            <item
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/ic_introduce"
+                android:title="Giới thiệu"/>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Chia sẻ"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Đánh giá"/>
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_ask"
+                android:title="Góp ý"/>
+
+        </menu>
+    </item>
+
+</menu>

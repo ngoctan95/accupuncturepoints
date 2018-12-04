@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <ImageView
+        android:id="@+id/imgView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/chinhgiua"/>
+
+    <ImageView
+        android:id="@+id/imgView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/front"/>
+
+    <ImageView
+        android:id="@+id/imgView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/matsau"/>
+
+    <FrameLayout
+        android:id="@+id/infoView"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="#f5f5f5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#d54b45"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/dismissInfoViewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:src="@drawable/ic_delete"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="Tên huyệt"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/scrollUpInfoViewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/contentAcu"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="50dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Mô tả"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Châm cứu"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Giải "
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Đường kinh"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Vị trí"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Hình ảnh "
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Chủ trị"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Phối huyệt"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Ghi chú"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Tác dụng"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</RelativeLayout>
