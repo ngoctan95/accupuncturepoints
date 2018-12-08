@@ -1,14 +1,12 @@
-package projects.android.acupuncturepoint;
+package projects.android.acupuncturepoint.Views.MainView;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.transition.Visibility;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -24,16 +22,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
+import projects.android.acupuncturepoint.R;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, IViewMain {
     private ImageView img1, img2, img3, scrollUpInfoViewBtn;
     private Toolbar toolbar;
     private FrameLayout infoView;
@@ -51,6 +50,7 @@ public class MainActivity extends AppCompatActivity
     private int count = 1;
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawer;
+    private MainPresenter mainPresenter;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity
 
         initImgs();
 
+        mainPresenter = new MainPresenter(this, getApplicationContext());
+        mainPresenter.findLastestAcupuncturePoints(0, 0);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -121,9 +123,9 @@ public class MainActivity extends AppCompatActivity
 
                         break;
                     case MotionEvent.ACTION_UP:
-                        Log.d("Touch coordinates : ",
+                        Log.d("===========",
                                 String.valueOf(event.getX()) + "=====" + String.valueOf(event.getY()));
-                        showInfoView(event.getX(), event.getY());
+//                        showInfoView(event.getX(), event.getY());
                         break;
                     case MotionEvent.ACTION_POINTER_UP:
                         mode = NONE;
@@ -391,7 +393,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void run() {
 
-                    if (!isFinishing()){
+                    if (!isFinishing()) {
                         new AlertDialog.Builder(MainActivity.this)
                                 .setTitle("Thông báo")
                                 .setMessage("Tính năng này chưa được hoàn thiện. Vui lòng chờ bản release kế tiếp")
