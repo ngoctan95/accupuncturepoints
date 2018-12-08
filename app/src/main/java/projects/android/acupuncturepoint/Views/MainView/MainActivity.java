@@ -401,7 +401,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.common) {
+        if (id == R.id.acupuncturePoint) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         } else {

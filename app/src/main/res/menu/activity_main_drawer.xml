@@ -3,53 +3,48 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/common"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Hình tổng thể"/>
-        <item
-            android:id="@+id/sicks"
-            android:icon="@drawable/ic_sicks"
-            android:title="Tra cứu bệnh"/>
-        <item
-            android:id="@+id/accs"
-            android:icon="@drawable/ic_accus"
-            android:title="Tra cứu huyệt"/>
-        <item
-            android:id="@+id/search"
-            android:icon="@drawable/ic_search"
-            android:title="Tìm kiếm"/>
-        <item
-            android:id="@+id/points"
-            android:icon="@drawable/ic_point"
-            android:title="Điểm tích lũy"/>
-        <item
-            android:id="@+id/marked"
-            android:icon="@drawable/ic_marked"
-            android:title="Trắc nghiệm"/>
-
-    </group>
-
-    <item android:title="Mở rộng">
+    <item android:title="Dành cho bệnh nhân">
         <menu>
             <item
-                android:id="@+id/nav_camera"
+                android:id="@+id/sickPublic"
                 android:icon="@drawable/ic_introduce"
-                android:title="Giới thiệu"/>
+                android:title="Bệnh học cộng đồng"/>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/contributor"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Chia sẻ"/>
+                android:title="Ý kiến bệnh nhân đã khỏi"/>
+        </menu>
+    </item>
+    <item android:title="Dành cho đồng nghiệp">
+        <menu>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/treatment"
+                android:icon="@drawable/ic_introduce"
+                android:title="Đông y trị bệnh"/>
+            <item
+                android:id="@+id/remedies"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Từ điển bài thuốc"/>
+            <item
+                android:id="@+id/medicines"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Đánh giá"/>
+                android:title="Từ điển vị thuốc"/>
             <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/acupuncturePoint"
                 android:icon="@drawable/ic_ask"
-                android:title="Góp ý"/>
-
+                android:title="Tra cứu huyệt vị"/>
+            <item
+                android:id="@+id/fire"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Châm cứu"/>
+            <item
+                android:id="@+id/sick"
+                android:icon="@drawable/ic_ask"
+                android:title="Hội chứng bệnh"/>
+            <item
+                android:id="@+id/book"
+                android:icon="@drawable/ic_ask"
+                android:title="Thư viện sách y khoa"/>
         </menu>
     </item>
 
