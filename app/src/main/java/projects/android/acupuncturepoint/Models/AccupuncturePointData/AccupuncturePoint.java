@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class AccupuncturePoint {
+
     @SerializedName("name")
     @Expose
     private String name;
@@ -16,37 +17,37 @@ public class AccupuncturePoint {
     @SerializedName("position")
     @Expose
     private String position;
-    @SerializedName("dissection")
+    @SerializedName("operation")
     @Expose
-    private String dissection;
+    private String operation;
     @SerializedName("deportment")
     @Expose
     private String deportment;
-    @SerializedName("treatment")
-    @Expose
-    private String treatment;
     @SerializedName("fire")
     @Expose
     private String fire;
     @SerializedName("refer")
     @Expose
     private String refer;
-    @SerializedName("img")
-    @Expose
-    private String img;
     @SerializedName("x")
     @Expose
-    private Integer x;
+    private String x;
     @SerializedName("y")
     @Expose
-    private Integer y;
+    private String y;
     @SerializedName("delta")
     @Expose
-    private Integer delta;
+    private String delta;
+    @SerializedName("imgPos")
+    @Expose
+    private String imgPos;
     @SerializedName("id")
     @Expose
-    private Integer id;
-    private final static long serialVersionUID = -4109717450935967805L;
+    private String id;
+    @SerializedName("imgLink")
+    @Expose
+    private String imgLink;
+    private final static long serialVersionUID = -1713689204839883490L;
 
     public String getName() {
         return name;
@@ -80,12 +81,12 @@ public class AccupuncturePoint {
         this.position = position;
     }
 
-    public String getDissection() {
-        return dissection;
+    public String getOperation() {
+        return operation;
     }
 
-    public void setDissection(String dissection) {
-        this.dissection = dissection;
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 
     public String getDeportment() {
@@ -94,14 +95,6 @@ public class AccupuncturePoint {
 
     public void setDeportment(String deportment) {
         this.deportment = deportment;
-    }
-
-    public String getTreatment() {
-        return treatment;
-    }
-
-    public void setTreatment(String treatment) {
-        this.treatment = treatment;
     }
 
     public String getFire() {
@@ -120,44 +113,51 @@ public class AccupuncturePoint {
         this.refer = refer;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public Integer getX() {
+    public String getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(String x) {
         this.x = x;
     }
 
-    public Integer getY() {
+    public String getY() {
         return y;
     }
 
-    public void setY(Integer y) {
+    public void setY(String y) {
         this.y = y;
     }
 
-    public Integer getDelta() {
+    public String getDelta() {
         return delta;
     }
 
-    public void setDelta(Integer delta) {
+    public void setDelta(String delta) {
         this.delta = delta;
     }
 
-    public Integer getId() {
+    public String getImgPos() {
+        return imgPos;
+    }
+
+    public void setImgPos(String imgPos) {
+        this.imgPos = imgPos;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
+    public String getImgLink() {
+        return imgLink;
+    }
+
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
+    }
 }

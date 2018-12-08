@@ -1,6 +1,7 @@
 package projects.android.acupuncturepoint.Views.MainView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,7 +28,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
 
@@ -87,8 +99,12 @@ public class MainActivity extends AppCompatActivity
         initImgs();
 
         mainPresenter = new MainPresenter(this, getApplicationContext());
-        mainPresenter.findLastestAcupuncturePoints(0, 0);
+        List<AccupuncturePoint> acupuncturePoints = mainPresenter.findLastestAcupuncturePoints(0,0);
+        Log.d("=======", String.valueOf(acupuncturePoints.size()));
+
     }
+
+
 
     @SuppressLint("ClickableViewAccessibility")
     private void eventImg(ImageView imageView) {
