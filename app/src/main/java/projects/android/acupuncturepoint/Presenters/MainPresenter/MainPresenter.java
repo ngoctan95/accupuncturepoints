@@ -118,6 +118,7 @@ public class MainPresenter implements IMainPresenter {
     public void findAcupuncturePoint(float x, float y, int currentImg) {
         List<AccupuncturePoint> accupuncturePointList = getListAcupuncture(-1);
         Log.d("===", String.valueOf(accupuncturePointList.size()));
+        Log.d("===", x + " - " + y + " -" + currentImg);
         for (int i = 0; i < accupuncturePointList.size(); i++) {
             int delta = Integer.parseInt(accupuncturePointList.get(i).getDelta());
             int xPos = Integer.parseInt(accupuncturePointList.get(i).getX());
@@ -125,11 +126,11 @@ public class MainPresenter implements IMainPresenter {
             int imgPos = Integer.parseInt(accupuncturePointList.get(i).getImgPos());
 
             if (x > (xPos - delta) && x < (xPos + delta) && y < (yPos + delta) && (y > yPos - delta) && imgPos == currentImg) {
+                Log.d("===", x + " - " + y + " -" + accupuncturePointList.get(i).getName());
                 iViewMain.showInfoView(accupuncturePointList.get(i));
                 return;
             }
         }
-//        iViewMain.dismissInfoView();
     }
 
     private String loadJSONFromAsset(Context context) {

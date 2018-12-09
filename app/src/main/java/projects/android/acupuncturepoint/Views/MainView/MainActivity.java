@@ -30,12 +30,12 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
+import projects.android.acupuncturepoint.Views.Remedie.Remedies;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, IViewMain {
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity
 
         TranslateAnimation animate = new TranslateAnimation(0, 0, -infoView.getHeight(), 0);
         animate.setDuration(1000);
-        animate.setFillAfter(true);
+        animate.setFillAfter(false);
         infoView.startAnimation(animate);
         infoView.setVisibility(View.VISIBLE);
 
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity
 
         TranslateAnimation animate = new TranslateAnimation(0, 0, 0, -infoView.getHeight());
         animate.setDuration(1000);
-        animate.setFillAfter(true);
+        animate.setFillAfter(false);
         infoView.startAnimation(animate);
         infoView.setVisibility(View.GONE);
     }
@@ -399,11 +399,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-
         if (item.getItemId() == android.R.id.home) {
             toggle();
             return true;
         }
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                toggle();
+            }
+            break;
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -426,6 +433,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.acupuncturePoint) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
+        } else if (id == R.id.remedies) {
+            startActivity(new Intent(this, Remedies.class));
+
         } else {
             runOnUiThread(new Runnable() {
                 @Override
