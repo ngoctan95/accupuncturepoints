@@ -1,5 +1,11 @@
 package projects.android.acupuncturepoint.Views.MainView;
 
-public interface IViewMain {
+import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 
+public interface IViewMain {
+    void showInfoView(AccupuncturePoint accupuncturePoint);
+
+    void dismissInfoView();
+
+    void showHintAnotherImgAc();
 }

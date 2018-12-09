@@ -31,7 +31,6 @@ import projects.android.acupuncturepoint.Views.MainView.MainActivity;
 
 public class MainPresenter implements IMainPresenter {
 
-    private MainActivity mainActivity;
     private IViewMain iViewMain;
     private Context context;
 
@@ -41,7 +40,7 @@ public class MainPresenter implements IMainPresenter {
     }
 
     @Override
-    public List<AccupuncturePoint> findLastestAcupuncturePoints(int x, int y) {
+    public List<AccupuncturePoint> getListAcupuncture(int currentImg) {
         String temp = loadJSONFromAsset(context);
         JSONArray jsonArray;
         JSONObject jsonObject = null;
@@ -49,7 +48,6 @@ public class MainPresenter implements IMainPresenter {
         try {
             jsonObject = new JSONObject(temp);
             jsonArray = jsonObject.getJSONArray("AcupuncturePoints");
-
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject json = jsonArray.getJSONObject(i);
@@ -66,7 +64,7 @@ public class MainPresenter implements IMainPresenter {
                 String imgPos = json.getString("imgPos");
                 String imgLink = json.getString("imgLink");
                 String refer = json.has("refer") ? json.getString("refer") : "";
-                String att = json.has("attribute") ? json.getString("attributes"): "";
+                String att = json.has("attribute") ? json.getString("attributes") : "";
 
                 AccupuncturePoint accupuncturePoint = new AccupuncturePoint();
                 accupuncturePoint.setId(id);
@@ -84,12 +82,54 @@ public class MainPresenter implements IMainPresenter {
                 accupuncturePoint.setImgPos(imgPos);
                 accupuncturePoint.setImgLink(imgLink);
 
-                accupuncturePointList.add(accupuncturePoint);
+                if (currentImg == -1) {
+                    accupuncturePointList.add(accupuncturePoint);
+                } else {
+                    if (currentImg == Integer.parseInt(accupuncturePoint.getId())) {
+                        accupuncturePointList.add(accupuncturePoint);
+                    }
+                }
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return accupuncturePointList;
+    }
+
+    @Override
+    public int findIdWithLastestPoint(float x, float y, int currentImg) {
+        List<AccupuncturePoint> accupuncturePointList = getListAcupuncture(-1);
+        Log.d("===", String.valueOf(accupuncturePointList.size()));
+        for (int i = 0; i < accupuncturePointList.size(); i++) {
+            int delta = Integer.parseInt(accupuncturePointList.get(i).getDelta());
+            int xPos = Integer.parseInt(accupuncturePointList.get(i).getX());
+            int yPos = Integer.parseInt(accupuncturePointList.get(i).getY());
+            int imgPos = Integer.parseInt(accupuncturePointList.get(i).getImgPos());
+
+            if (x > (xPos - delta) && x < (xPos + delta) && y < (yPos + delta) && (y > yPos - delta) && imgPos == currentImg) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public void findAcupuncturePoint(float x, float y, int currentImg) {
+        List<AccupuncturePoint> accupuncturePointList = getListAcupuncture(-1);
+        Log.d("===", String.valueOf(accupuncturePointList.size()));
+        for (int i = 0; i < accupuncturePointList.size(); i++) {
+            int delta = Integer.parseInt(accupuncturePointList.get(i).getDelta());
+            int xPos = Integer.parseInt(accupuncturePointList.get(i).getX());
+            int yPos = Integer.parseInt(accupuncturePointList.get(i).getY());
+            int imgPos = Integer.parseInt(accupuncturePointList.get(i).getImgPos());
+
+            if (x > (xPos - delta) && x < (xPos + delta) && y < (yPos + delta) && (y > yPos - delta) && imgPos == currentImg) {
+                iViewMain.showInfoView(accupuncturePointList.get(i));
+                return;
+            }
+        }
+//        iViewMain.dismissInfoView();
     }
 
     private String loadJSONFromAsset(Context context) {

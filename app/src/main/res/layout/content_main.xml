@@ -14,7 +14,7 @@
         android:id="@+id/imgView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/chinhgiua"/>
+        android:src="@drawable/center"/>
 
     <ImageView
         android:id="@+id/imgView1"
@@ -26,7 +26,7 @@
         android:id="@+id/imgView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/matsau"/>
+        android:src="@drawable/behind"/>
 
     <FrameLayout
         android:id="@+id/infoView"
@@ -37,7 +37,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="#d54b45"
             android:gravity="center"
@@ -56,15 +56,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.8"
-                android:text="Tên huyệt"
+                android:text="THÔNG TIN HUYỆT"
+                android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/scrollUpInfoViewBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:clickable="true"/>
         </LinearLayout>
 
@@ -80,144 +82,260 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Mô tả"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Châm cứu"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Tên huyệt:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Giải "
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:text="dsadasda"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"/>
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
                     android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Đường kinh"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Vị trí"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Tên gọi khác:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Hình ảnh "
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/anotherName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
                     android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Chủ trị"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Phối huyệt"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Đặc tính:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Ghi chú"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/attributes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
                     android:background="@drawable/rounded_corner_textview"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Tác dụng"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Vị trí:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Giải phẫu:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/operation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Tác dụng:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/deportment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Chữa trị:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/fire"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Châm cứu:"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/refer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:padding="20dp"
+                        android:text="Chủ trị"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_textview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Hình ảnh: "
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/imgLink"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:padding="20dp"/>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

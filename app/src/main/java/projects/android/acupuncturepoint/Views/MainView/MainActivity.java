@@ -28,14 +28,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private FrameLayout infoView;
     private ImageButton dismissInfoViewBtn;
+    private TextView name, anotherName, attributes, position, deportment, fire, operation, refer;
+    private ImageView imgLink;
     private ScrollView contentAcu;
     float scalediff;
     private static final int NONE = 0;
@@ -59,10 +55,11 @@ public class MainActivity extends AppCompatActivity
     private float d = 0f;
     private float newRot = 0f;
     private FloatingActionButton fab;
-    private int count = 1;
+    private int currentImg = 1;
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawer;
     private MainPresenter mainPresenter;
+    private List<AccupuncturePoint> accupuncturePoints;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -81,134 +78,42 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         init();
+        setupImgs();
+        initImgs();
+        initInfoView();
+        mainPresenter = new MainPresenter(this, getApplicationContext());
+        accupuncturePoints = mainPresenter.getListAcupuncture(-1);
+
+    }
+
+    private void initInfoView() {
+        imgLink = findViewById(R.id.imgLink);
+        position = findViewById(R.id.position);
+        deportment = findViewById(R.id.deportment);
+        fire = findViewById(R.id.fire);
+        anotherName = findViewById(R.id.anotherName);
+        attributes = findViewById(R.id.attributes);
+        name = findViewById(R.id.name);
+        operation = findViewById(R.id.operation);
+        refer = findViewById(R.id.refer);
+    }
+
+    private void setupImgs() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
-
-
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, height);
         layoutParams.topMargin = 50;
         img1.setLayoutParams(layoutParams);
         img2.setLayoutParams(layoutParams);
         img3.setLayoutParams(layoutParams);
-
-
-        initImgs();
-
-        mainPresenter = new MainPresenter(this, getApplicationContext());
-        List<AccupuncturePoint> acupuncturePoints = mainPresenter.findLastestAcupuncturePoints(0,0);
-        Log.d("=======", String.valueOf(acupuncturePoints.size()));
-
     }
 
-
-
-    @SuppressLint("ClickableViewAccessibility")
-    private void eventImg(ImageView imageView) {
-        imageView.setOnTouchListener(new View.OnTouchListener() {
-            RelativeLayout.LayoutParams parms;
-            int startwidth;
-            int startheight;
-            float dx = 0, dy = 0, x = 0, y = 0;
-            float angle = 0;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final ImageView view = (ImageView) v;
-
-                ((BitmapDrawable) view.getDrawable()).setAntiAlias(true);
-                switch (event.getAction() & MotionEvent.ACTION_MASK) {
-                    case MotionEvent.ACTION_DOWN:
-                        parms = (RelativeLayout.LayoutParams) view.getLayoutParams();
-                        startwidth = parms.width;
-                        startheight = parms.height;
-                        dx = event.getRawX() - parms.leftMargin;
-                        dy = event.getRawY() - parms.topMargin;
-                        mode = DRAG;
-                        break;
-
-                    case MotionEvent.ACTION_POINTER_DOWN:
-                        oldDist = spacing(event);
-                        if (oldDist > 10f) {
-                            mode = ZOOM;
-                        }
-                        d = rotation(event);
-
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        Log.d("===========",
-                                String.valueOf(event.getX()) + "=====" + String.valueOf(event.getY()));
-//                        showInfoView(event.getX(), event.getY());
-                        break;
-                    case MotionEvent.ACTION_POINTER_UP:
-                        mode = NONE;
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        if (mode == DRAG) {
-                            x = event.getRawX();
-                            y = event.getRawY();
-
-                            parms.leftMargin = (int) (x - dx);
-                            parms.topMargin = (int) (y - dy);
-
-                            parms.rightMargin = 0;
-                            parms.bottomMargin = 0;
-                            parms.rightMargin = parms.leftMargin + (5 * parms.width);
-                            parms.bottomMargin = parms.topMargin + (10 * parms.height);
-
-                            view.setLayoutParams(parms);
-
-                        } else if (mode == ZOOM) {
-
-                            if (event.getPointerCount() == 2) {
-
-                                newRot = rotation(event);
-                                float r = newRot - d;
-                                angle = 0;
-
-                                x = event.getRawX();
-                                y = event.getRawY();
-
-                                float newDist = spacing(event);
-                                if (newDist > 10f) {
-                                    float scale = newDist / oldDist * view.getScaleX();
-                                    Log.d("=", String.valueOf(scale));
-                                    if (scale > 0.8) {
-                                        scalediff = scale;
-                                        view.setScaleX(scale);
-                                        view.setScaleY(scale);
-
-                                    }
-                                }
-
-                                view.animate().rotationBy(angle).setDuration(0).setInterpolator(new LinearInterpolator()).start();
-
-                                x = event.getRawX();
-                                y = event.getRawY();
-
-                                parms.leftMargin = (int) ((x - dx) + scalediff);
-                                parms.topMargin = (int) ((y - dy) + scalediff);
-
-                                parms.rightMargin = 0;
-                                parms.bottomMargin = 0;
-                                parms.rightMargin = parms.leftMargin + (5 * parms.width);
-                                parms.bottomMargin = parms.topMargin + (10 * parms.height);
-
-                                view.setLayoutParams(parms);
-                            }
-                        }
-                        break;
-                }
-                return true;
-            }
-        });
-    }
-
-    @SuppressLint("RestrictedApi")
-    private void showInfoView(double x, double y) {
+    @Override
+    public void showInfoView(AccupuncturePoint accupuncturePoint) {
+        Log.d("=======TRUE", accupuncturePoint.getName() + " = " + accupuncturePoint.getAnotherName());
         hideFloatingActionButton(fab);
 
         TranslateAnimation animate = new TranslateAnimation(0, 0, -infoView.getHeight(), 0);
@@ -216,10 +121,23 @@ public class MainActivity extends AppCompatActivity
         animate.setFillAfter(true);
         infoView.startAnimation(animate);
         infoView.setVisibility(View.VISIBLE);
+
+        name.setText(accupuncturePoint.getName());
+        anotherName.setText(accupuncturePoint.getAnotherName());
+        attributes.setText(accupuncturePoint.getAttributes());
+        refer.setText(accupuncturePoint.getRefer());
+        operation.setText(accupuncturePoint.getOperation());
+        deportment.setText(accupuncturePoint.getDeportment());
+        fire.setText(accupuncturePoint.getFire());
+        position.setText(accupuncturePoint.getPosition());
+
+        Context context = imgLink.getContext();
+        int id = context.getResources().getIdentifier(accupuncturePoint.getImgLink(), "drawable", context.getPackageName());
+        imgLink.setImageResource(id);
     }
 
-    @SuppressLint("RestrictedApi")
-    private void dismissInfoView() {
+    @Override
+    public void dismissInfoView() {
         showFloatingActionButton(fab);
 
         TranslateAnimation animate = new TranslateAnimation(0, 0, 0, -infoView.getHeight());
@@ -227,6 +145,11 @@ public class MainActivity extends AppCompatActivity
         animate.setFillAfter(true);
         infoView.startAnimation(animate);
         infoView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showHintAnotherImgAc() {
+
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -297,9 +220,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                count++;
-                if (count == 4) {
-                    count = 1;
+                currentImg++;
+                if (currentImg == 4) {
+                    currentImg = 1;
                 }
                 showOrDismiss();
             }
@@ -316,7 +239,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showOrDismiss() {
-        switch (count) {
+        switch (currentImg) {
             case 1: {
                 img1.setVisibility(View.VISIBLE);
                 img2.setVisibility(View.GONE);
@@ -349,6 +272,105 @@ public class MainActivity extends AppCompatActivity
         double delta_y = (event.getY(0) - event.getY(1));
         double radians = Math.atan2(delta_y, delta_x);
         return (float) Math.toDegrees(radians);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void eventImg(ImageView imageView) {
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            RelativeLayout.LayoutParams parms;
+            int startwidth;
+            int startheight;
+            float dx = 0, dy = 0, x = 0, y = 0;
+            float angle = 0;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final ImageView view = (ImageView) v;
+
+                ((BitmapDrawable) view.getDrawable()).setAntiAlias(true);
+                switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                    case MotionEvent.ACTION_DOWN:
+                        parms = (RelativeLayout.LayoutParams) view.getLayoutParams();
+                        startwidth = parms.width;
+                        startheight = parms.height;
+                        dx = event.getRawX() - parms.leftMargin;
+                        dy = event.getRawY() - parms.topMargin;
+                        mode = DRAG;
+                        break;
+
+                    case MotionEvent.ACTION_POINTER_DOWN:
+                        oldDist = spacing(event);
+                        if (oldDist > 10f) {
+                            mode = ZOOM;
+                        }
+                        d = rotation(event);
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        mainPresenter.findAcupuncturePoint(event.getX(), event.getY(), currentImg);
+                        break;
+                    case MotionEvent.ACTION_POINTER_UP:
+                        mode = NONE;
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        if (mode == DRAG) {
+                            x = event.getRawX();
+                            y = event.getRawY();
+
+                            parms.leftMargin = (int) (x - dx);
+                            parms.topMargin = (int) (y - dy);
+
+                            parms.rightMargin = 0;
+                            parms.bottomMargin = 0;
+                            parms.rightMargin = parms.leftMargin + (5 * parms.width);
+                            parms.bottomMargin = parms.topMargin + (10 * parms.height);
+
+                            view.setLayoutParams(parms);
+
+                        } else if (mode == ZOOM) {
+
+                            if (event.getPointerCount() == 2) {
+
+                                newRot = rotation(event);
+                                float r = newRot - d;
+                                angle = 0;
+
+                                x = event.getRawX();
+                                y = event.getRawY();
+
+                                float newDist = spacing(event);
+                                if (newDist > 10f) {
+                                    float scale = newDist / oldDist * view.getScaleX();
+                                    Log.d("=", String.valueOf(scale));
+                                    if (scale > 0.8) {
+                                        scalediff = scale;
+                                        view.setScaleX(scale);
+                                        view.setScaleY(scale);
+
+                                    }
+                                }
+
+                                view.animate().rotationBy(angle).setDuration(0).setInterpolator(new LinearInterpolator()).start();
+
+                                x = event.getRawX();
+                                y = event.getRawY();
+
+                                parms.leftMargin = (int) ((x - dx) + scalediff);
+                                parms.topMargin = (int) ((y - dy) + scalediff);
+
+                                parms.rightMargin = 0;
+                                parms.bottomMargin = 0;
+                                parms.rightMargin = parms.leftMargin + (5 * parms.width);
+                                parms.bottomMargin = parms.topMargin + (10 * parms.height);
+
+                                view.setLayoutParams(parms);
+                            }
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
 
