@@ -9,8 +9,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -59,7 +61,7 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
         toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
         mTitle = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
         back = findViewById(R.id.back);
-        mTitle.setText("Từ điển bài thuốc");
+        mTitle.setText("Từ điển vị thuốc");
         remediesList = findViewById(R.id.remediesList);
         arrayAdapter
                 = new ViThuocAdapter(this, viThuocList);
@@ -73,6 +75,14 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
 
         remediesPresenter = new RemediesPresenter(this, getApplicationContext());
         remediesPresenter.loadJSONFromAsset(getApplicationContext());
+
+        remediesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ViThuoc viThuoc = (ViThuoc) adapterView.getAdapter().getItem(i);
+                Log.d("====", viThuoc.getLink());
+            }
+        });
     }
 
 
@@ -81,7 +91,7 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
             final StringBuilder builder = new StringBuilder();
 
             try {
-                JSONObject jsonObject =new JSONObject();
+                JSONObject jsonObject = new JSONObject();
                 JSONArray jsonArray = new JSONArray();
                 Document doc = Jsoup.connect("https://www.thaythuoccuaban.com/vithuoc/index.html").get();
                 Elements element = doc.select("div[id=1]");
@@ -101,8 +111,8 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
                             viThuoc.setLink(element3.get(j).attr("href"));
                             viThuocList.add(viThuoc);
                             try {
-                                String string = "{ \"name\": " + "\"" + element3.get(j).text() + "\" "+",\n" +"\"link\": " + "\"" + element3.get(j).attr("href") +"\" "+ "}";
-                               Log.d("~~~~~~~~~", string);
+                                String string = "{ \"name\": " + "\"" + element3.get(j).text() + "\" " + ",\n" + "\"link\": " + "\"" + element3.get(j).attr("href") + "\" " + "}";
+                                Log.d("~~~~~~~~~", string);
                                 JSONObject jsonObject1 = new JSONObject(string);
                                 jsonArray.put(jsonObject1);
                             } catch (JSONException e) {
@@ -136,6 +146,7 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
             Log.d("====", str.substring(i, Math.min(str.length(), i + chunkSize)));
         }
     }
+
     public static void writeStringAsFile(Context context, final String fileContents, String fileName) {
         try {
             FileWriter out = new FileWriter(new File(context.getFilesDir(), fileName));

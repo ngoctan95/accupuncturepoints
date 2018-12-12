@@ -466,7 +466,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.acupuncturePoint) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        } else if (id == R.id.remedies) {
+        } else if (id == R.id.medicines) {
             startActivity(new Intent(this, Remedies.class));
 
         } else {
