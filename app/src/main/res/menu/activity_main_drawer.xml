@@ -22,13 +22,13 @@
                 android:icon="@drawable/ic_introduce"
                 android:title="Đông y trị bệnh"/>
             <item
-                android:id="@+id/remedies"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Từ điển bài thuốc"/>
-            <item
                 android:id="@+id/medicines"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Từ điển vị thuốc"/>
+            <item
+                android:id="@+id/remedies"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Từ điển bài thuốc"/>
             <item
                 android:id="@+id/acupuncturePoint"
                 android:icon="@drawable/ic_ask"

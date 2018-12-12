@@ -1,5 +1,5 @@
 package projects.android.acupuncturepoint.Views.Remedie;
 
-public class IViewRemedie {
-
+public interface IViewRemedie {
+    void showListViThuoc(String vithuoc);
 }
