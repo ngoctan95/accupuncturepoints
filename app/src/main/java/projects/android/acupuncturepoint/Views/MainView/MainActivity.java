@@ -4,6 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawer;
     private MainPresenter mainPresenter;
     private List<AccupuncturePoint> accupuncturePoints;
+    private int width, height;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -236,6 +242,33 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        BitmapFactory.Options myOptions = new BitmapFactory.Options();
+        myOptions.inDither = true;
+        myOptions.inScaled = false;
+        myOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;// important
+        myOptions.inPurgeable = true;
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.front,myOptions);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColor(Color.BLUE);
+
+
+        Bitmap workingBitmap = Bitmap.createBitmap(bitmap);
+        Bitmap mutableBitmap = workingBitmap.copy(Bitmap.Config.ARGB_8888, true);
+
+
+        Canvas canvas = new Canvas(mutableBitmap);
+        canvas.drawCircle((float) (584*1.909), (float) (835*1.757), 7, paint);
+
+
+//        img1.setAdjustViewBounds(true);
+//        img1.setImageBitmap(mutableBitmap);
+//
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        height = displayMetrics.heightPixels;
+        width = displayMetrics.widthPixels;
     }
 
     private void showOrDismiss() {
@@ -307,7 +340,7 @@ public class MainActivity extends AppCompatActivity
 
                         break;
                     case MotionEvent.ACTION_UP:
-                        mainPresenter.findAcupuncturePoint(event.getX(), event.getY(), currentImg);
+                        mainPresenter.findAcupuncturePoint(event.getX(), event.getY(), currentImg, width, height);
                         break;
                     case MotionEvent.ACTION_POINTER_UP:
                         mode = NONE;

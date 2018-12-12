@@ -9,5 +9,5 @@ public interface IMainPresenter {
 
     int findIdWithLastestPoint(float x, float y, int currentImg);
 
-    void findAcupuncturePoint(float x, float y, int currentImg);
+    void findAcupuncturePoint(float x, float y, int currentImg, int width, int height);
 }

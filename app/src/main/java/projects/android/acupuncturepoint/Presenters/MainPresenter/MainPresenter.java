@@ -2,7 +2,9 @@ package projects.android.acupuncturepoint.Presenters.MainPresenter;
 
 import android.content.Context;
 import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.widget.Toast;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -115,18 +117,19 @@ public class MainPresenter implements IMainPresenter {
     }
 
     @Override
-    public void findAcupuncturePoint(float x, float y, int currentImg) {
+    public void findAcupuncturePoint(float x, float y, int currentImg, int width, int height) {
         List<AccupuncturePoint> accupuncturePointList = getListAcupuncture(-1);
-        Log.d("===", String.valueOf(accupuncturePointList.size()));
-        Log.d("===", x + " - " + y + " -" + currentImg);
+        Log.d("===", x + " - " + y + " -" + currentImg + width + "==" + height);
+        float delX = (float) ((1080*1.0) / width);
+        float delY = (float) ((2035 * 1.0 )/ height);
+        Log.d("=====", delX + " - " + delY + " - " +delX * x + " -" + delY * y);
         for (int i = 0; i < accupuncturePointList.size(); i++) {
             int delta = Integer.parseInt(accupuncturePointList.get(i).getDelta());
             int xPos = Integer.parseInt(accupuncturePointList.get(i).getX());
             int yPos = Integer.parseInt(accupuncturePointList.get(i).getY());
             int imgPos = Integer.parseInt(accupuncturePointList.get(i).getImgPos());
 
-            if (x > (xPos - delta) && x < (xPos + delta) && y < (yPos + delta) && (y > yPos - delta) && imgPos == currentImg) {
-                Log.d("===", x + " - " + y + " -" + accupuncturePointList.get(i).getName());
+            if (x > (xPos - delta) && x < (xPos + delta) && y * delY < (yPos + delta) && (y * delY > yPos - delta) && imgPos == currentImg) {
                 iViewMain.showInfoView(accupuncturePointList.get(i));
                 return;
             }
