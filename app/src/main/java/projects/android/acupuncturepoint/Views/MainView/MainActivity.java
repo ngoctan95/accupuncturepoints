@@ -40,6 +40,7 @@ import java.util.List;
 import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
+import projects.android.acupuncturepoint.Views.Drug.Drug;
 import projects.android.acupuncturepoint.Views.Remedie.Remedies;
 
 public class MainActivity extends AppCompatActivity
@@ -248,7 +249,7 @@ public class MainActivity extends AppCompatActivity
         myOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;// important
         myOptions.inPurgeable = true;
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.front,myOptions);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.front, myOptions);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.BLUE);
@@ -259,7 +260,7 @@ public class MainActivity extends AppCompatActivity
 
 
         Canvas canvas = new Canvas(mutableBitmap);
-        canvas.drawCircle((float) (584*1.909), (float) (835*1.757), 7, paint);
+        canvas.drawCircle((float) (584 * 1.909), (float) (835 * 1.757), 7, paint);
 
 
 //        img1.setAdjustViewBounds(true);
@@ -468,7 +469,8 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.medicines) {
             startActivity(new Intent(this, Remedies.class));
-
+        } else if (id == R.id.remedies) {
+            startActivity(new Intent(this, Drug.class));
         } else {
             runOnUiThread(new Runnable() {
                 @Override

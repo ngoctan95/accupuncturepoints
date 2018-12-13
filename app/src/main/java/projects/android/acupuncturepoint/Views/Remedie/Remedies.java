@@ -1,18 +1,22 @@
 package projects.android.acupuncturepoint.Views.Remedie;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +34,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import projects.android.acupuncturepoint.Models.WebHTML.ViThuoc;
 import projects.android.acupuncturepoint.Presenters.Remedies.RemediesPresenter;
@@ -76,15 +81,67 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
         remediesPresenter = new RemediesPresenter(this, getApplicationContext());
         remediesPresenter.loadJSONFromAsset(getApplicationContext());
 
-        remediesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ViThuoc viThuoc = (ViThuoc) adapterView.getAdapter().getItem(i);
-                Log.d("====", viThuoc.getLink());
+        remediesList.setOnItemClickListener((adapterView, view, i, l) -> {
+            ViThuoc viThuoc = (ViThuoc) adapterView.getAdapter().getItem(i);
+            final Dialog dialog = new Dialog(Remedies.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+            dialog.setContentView(R.layout.layout_dialog_vithuoc);
+
+            // set the custom dialog components - text, image and button
+            TextView text = (TextView) dialog.findViewById(R.id.text);
+            if (!isNetworkAvailable(getApplicationContext())) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        text.setText("Vui lòng kiểm tra kết nối mạng để đồng bộ dữ liệu với server. Hãy thử lại sau!");
+                    }
+                }, 1000);
+            } else {
+                getDataFromLink(viThuoc.getLink(), text);
             }
+
+            Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+            // if button is clicked, close the custom dialog
+            dialogButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+
+            dialog.show();
         });
     }
 
+    private void getDataFromLink(String link, TextView text) {
+        new Thread(() -> {
+            StringBuilder builder = new StringBuilder();
+            try {
+                Document document = Jsoup.connect(link).get();
+                Elements element = document.select("div[id=6]");
+                builder.append(element);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            runOnUiThread(() -> {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    text.setText(Html.fromHtml(concatString(builder.toString()), Html.FROM_HTML_MODE_COMPACT));
+                } else {
+                    text.setText(Html.fromHtml(concatString(builder.toString())));
+                }
+            });
+        }).start();
+    }
+
+    public boolean isNetworkAvailable(Context context) {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        return Objects.requireNonNull(connectivityManager).getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+    }
+
+    private String concatString(String data) {
+        int findPos = data.indexOf("Nơi mua bán vị thuốc");
+        return String.valueOf(data.subSequence(0, findPos));
+    }
 
     private void getWebsite() {
         new Thread(() -> {
@@ -111,7 +168,7 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
                             viThuoc.setLink(element3.get(j).attr("href"));
                             viThuocList.add(viThuoc);
                             try {
-                                String string = "{ \"name\": " + "\"" + element3.get(j).text() + "\" " + ",\n" + "\"link\": " + "\"" + element3.get(j).attr("href") + "\" " + "}";
+                                String string = "{ \"name\": " + "\"" + element3.get(j).text() + "\" " + ",\n" + "\"link\": " + "\"" + element3.get(j).attr("href") + "\" " + "},";
                                 Log.d("~~~~~~~~~", string);
                                 JSONObject jsonObject1 = new JSONObject(string);
                                 jsonArray.put(jsonObject1);
