@@ -40,5 +40,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'org.jsoup:jsoup:1.10.1'
     implementation 'com.facebook.android:facebook-login:[4,5)'
-    compile 'com.bogdwellers:pinchtozoom:0.1'
+    implementation 'com.bogdwellers:pinchtozoom:0.1'
 }

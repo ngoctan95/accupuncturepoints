@@ -1,0 +1,604 @@
+{
+  "HoiChungBenh": [
+    {
+      "name": "CHỨNG ÂM DỊCH KHUY TÔN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungamdichkhuyton.html"
+    },
+    {
+      "name": "CHỨNG ÂM DƯƠNG ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungamduongdeuhu.html"
+    },
+    {
+      "name": "CHỨNG BÀNG QUANG HƯ HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungbangquanghuhan.html"
+    },
+    {
+      "name": "CHỨNG BÀNG QUANG THẤP NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-bang-quang-thap-nhiet.html"
+    },
+    {
+      "name": "CHỨNG BÀO CUNG HƯ HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-bao-cung-hu-han.html"
+    },
+    {
+      "name": "CHỨNG BỆNH THANH ĐƯƠNG không THĂNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungbenhthanhduongkhongthang.html"
+    },
+    {
+      "name": "CHỨNG CAN ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-am-hu.html"
+    },
+    {
+      "name": "CHỨNG CAN ĐƠM NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-dom-nhiet.html"
+    },
+    {
+      "name": "CHỨNG CAN DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG CAN DƯƠNG THƯƠNG CANG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-duong-thuong-cang.html"
+    },
+    {
+      "name": "CHỨNG CAN HỎA THƯỢNG VIÊM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-hoa-thuong-viem.html"
+    },
+    {
+      "name": "CHỨNG CAN HUYẾT HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-huyet-hu.html"
+    },
+    {
+      "name": "CHỨNG CAN HUYẾT Ứ Ở TRẺ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-huyet-u-tre.html"
+    },
+    {
+      "name": "CHỨNG CAN KHÍ UẤT KẾT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-khi-uat-ket.html"
+    },
+    {
+      "name": "CHỨNG CAN KINH THẬP NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-kinh-thap-nhiet.html"
+    },
+    {
+      "name": "CHỨNG CAN PHONG NỘI ĐỘNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-phong-noi-dong.html"
+    },
+    {
+      "name": "CHỨNG CAN VỊ BẤT HÒA",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-can-vi-bat-hoa.html"
+    },
+    {
+      "name": "CHỨNG ĐẠI TRƯỜNG HƯ HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dai-truong-hu-han.html"
+    },
+    {
+      "name": "CHỨNG ĐẠI TRƯỜNG KẾT NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dai-truong-ket-nhiet.html"
+    },
+    {
+      "name": "CHỨNG ĐẠI TRƯỜNG TÂN KHUY",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dai-truong-tan-khuy.html"
+    },
+    {
+      "name": "CHỨNG ĐẠI TRƯỜNG THẤP NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dai-truong-thap-nhiet.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM HÓA QuẤY RỐI TÂM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-hoa-quay-roi-tam.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM KHÍ CẤU KẾT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-khi-cau-ket.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM NHIỆT ÚNG TẮC Ở PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-nhiet-ung-tac-o-phe.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM NHIỆT VỊ LẤP TÂM KHIẾU Ở TRẺ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-nhiet-vit-lap-tam-khieu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM THẤP NGHẼN TRỞ Ở BÀO CUNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-thap-nghen-tro-o-bao-cung.html"
+    },
+    {
+      "name": "CHỨNG ĐÀM Ứ CẤU KẾT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dam-u-cau-ket.html"
+    },
+    {
+      "name": "CHỨNG ĐỜM KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dom-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG ĐỜM NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dom-nhiet.html"
+    },
+    {
+      "name": "CHỨNG ĐỜM UẤT ĐÀM QuẤY NHIỄU",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-dom-uat-dam-quay-nhieu.html"
+    },
+    {
+      "name": "CHỨNG DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungduonghu.html"
+    },
+    {
+      "name": "CHỨNG DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG HÀN ĐÀM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-han-dam.html"
+    },
+    {
+      "name": "CHỨNG HÀN ĐÀM NGĂN TRỞ PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-han-dam-ngan-tro-phe.html"
+    },
+    {
+      "name": "CHỨNG HÀN TÀ NGƯNG ĐỌNG Ở BÀO CUNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-han-ta-ngung-dong-o-bao-cung.html"
+    },
+    {
+      "name": "CHỨNG HÀN THẤP",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chunghanthap.html"
+    },
+    {
+      "name": "CHỨNG HÀN THẤP",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-han-thap.html"
+    },
+    {
+      "name": "CHỨNG HÀ TRỆ CAN MẠCH",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-han-tre-can-mach.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-huyet-han.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-huyet-hu.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-huyet-nhiet.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT THOÁT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chunghuyetthoat.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT THOÁT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-huyet-thoat.html"
+    },
+    {
+      "name": "CHỨNG HUYẾT Ứ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-huyet-u.html"
+    },
+    {
+      "name": "CHỨNG KHÍ ÂM ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-khi-am-deu-hu.html"
+    },
+    {
+      "name": "CHỨNG KHÍ BẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungkhibe.html"
+    },
+    {
+      "name": "CHỨNG KHÍ BẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-khi-be.html"
+    },
+    {
+      "name": "CHỨNG KHÍ HÃM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-khi-ham.html"
+    },
+    {
+      "name": "CHỨNG KHÍ HUYẾT ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungkhihuyetdeuhu.html"
+    },
+    {
+      "name": "CHỨNG KHÍ NGHỊC",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-khi-nghich.html"
+    },
+    {
+      "name": "CHỨNG KHÍ THOÁT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-khi-thoat.html"
+    },
+    {
+      "name": "CHỨNG MẠCH TẾ NGHẼN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-mach-te-nghen.html"
+    },
+    {
+      "name": "CHỨNG NGUYÊN KHÍ HƯ YẾU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-nguyen-khi-hu-yeu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG NHIỆT CÚC SINH PHONG Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-nhiet-cuc-sinh-phong-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG NHIỆT ĐÀM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-nhiet-dam.html"
+    },
+    {
+      "name": "CHỨNG NỘI NHIỆT BỐC MẠNH Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-noi-nhiet-boc-manh-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG PHẾ ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-am-hu.html"
+    },
+    {
+      "name": "CHỨNG PHẾ DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG PHẾ KHÍ ÂM ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-khi-am-deu-hu.html"
+    },
+    {
+      "name": "CHỨNG PHẾ KHI HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG PHẾ KHIÍ HƯ YẾU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-khi-hu-yeu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG PHẾ KHÍ SUY TUYẾT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-khi-suy-tuyet.html"
+    },
+    {
+      "name": "CHỨNG PHẾ NHIỆT QUÁ THỊNH Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-nhiet-qua-thinh-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG PHẾ THẬN ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-than-am-hu.html"
+    },
+    {
+      "name": "CHỨNG PHẾ TÝ THẬN DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phe-ty-than-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG PHONG ĐÀM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phong-dam.html"
+    },
+    {
+      "name": "CHỨNG PHONG HÀN BỔ PHẦN BiỂU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phong-han-bo-phan-bieu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG PHÒNG HÀN PHẠM PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phong-han-pham-phe.html"
+    },
+    {
+      "name": "CHỨNG PHONG NHIỆT XÂM NHẬP Ở PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phong-nhiet-xam-nhap-phe.html"
+    },
+    {
+      "name": "CHỨNG PHONG ÔN BỔ PHẦN BiỂU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-phong-on-bo-phan-bieu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG SAU KHI ĐẺ BÀI HUYẾT XÔNG LÊN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-sau-khi-de-bai-huyet-xong-len.html"
+    },
+    {
+      "name": "CHỨNG TÂM ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-am-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM CAN HUYẾT HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-can-huyet-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM ĐỜM BẤT NINH",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-dom-bat-ninh.html"
+    },
+    {
+      "name": "CHỨNG TÂM DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM DƯƠNG THOÁT ĐỘT NGỘT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-duong-thoat-dot-ngot.html"
+    },
+    {
+      "name": "CHỨNG TÂM HỎA CAN THỊNH",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-hoa-can-thinh.html"
+    },
+    {
+      "name": "CHỨNG TÂM HUYẾT HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-huyet-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM KHÍ HUYẾT ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-khi-huyet-deu-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂM KINH THỰC NHIỆT Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-kinh-thuc-nhiet-o-te-em.html"
+    },
+    {
+      "name": "CHỨNG TÂM PHẾ KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tam-phe-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG TÂN DỊCH KHUY TÔN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tan-dich-khuy-ton.html"
+    },
+    {
+      "name": "CHƯNG TÁO BÓN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tao-bon.html"
+    },
+    {
+      "name": "CHỨNG TÁO ĐÀM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tao-dam.html"
+    },
+    {
+      "name": "CHỨNG PHẠM PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tap-da-pham-phe.html"
+    },
+    {
+      "name": "CHỨNG THAI HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thai-han.html"
+    },
+    {
+      "name": "CHỨNG THAI NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thai-nhiet.html"
+    },
+    {
+      "name": "CHƯNG THẬN ÂM DƯƠNG ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-am-duong-deu-hu.html"
+    },
+    {
+      "name": "CHỨNG THẬN ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-am-hu.html"
+    },
+    {
+      "name": "CHỨNG THẬN DƯƠNG HƯ THỦY TRẦN LAN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-duong-hu-thuy-tran-lan.html"
+    },
+    {
+      "name": "CHỨNG THÀNH DƯƠNG không THĂNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thanh-duong-khong-thang.html"
+    },
+    {
+      "name": "CHỨNG THẬN KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG THẬN KHÍ HƯ YẾU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-khi-hu-yeu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG THẬN KHÍ không BỀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-khi-khong-ben.html"
+    },
+    {
+      "name": "CHỨNG THẬN KHÍ không NẠP",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-khong-nap-khi.html"
+    },
+    {
+      "name": "CHỨNG THẬN TINH BẤT TÚC",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-than-tinh-bat-tuc.html"
+    },
+    {
+      "name": "CHỨNG THẤP ĐÀM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thap-dam.html"
+    },
+    {
+      "name": "CHỨNG THẤP Khàn",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thap-khon.html"
+    },
+    {
+      "name": "CHỨNG THẤP NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thap-nhiet.html"
+    },
+    {
+      "name": "CHỨNG THỰC THƯỜNG TỲ VỊ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thuc-thuong-ty-vi.html"
+    },
+    {
+      "name": "CHỨNG THỦY ÂM Ứ ĐỌNG TRONG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thuy-am-u-dong-trong.html"
+    },
+    {
+      "name": "CHỨNG THỦY HÀN SA PHẾ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thuy-han-sa-phe.html"
+    },
+    {
+      "name": "CHỨNG THỦY KHÍ LANG TÂM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thuy-khi-lang-tam.html"
+    },
+    {
+      "name": "CHỨNG THỦY THẤP TRÀN LAN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-thuy-thap-tran-lan.html"
+    },
+    {
+      "name": "CHỨNG TiỂU TRƯƠNG HƯ HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tieu-truong-hu-han.html"
+    },
+    {
+      "name": "CHỨNG TiỂU TRƯƠNG KHÍ TRỆ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-tieu-truong-khi-tre.html"
+    },
+    {
+      "name": "CHỨNG TRỞ CAN không GIÁNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungtrocamkhonggiang.html"
+    },
+    {
+      "name": "CHỨNG TRỌC ÂM không GIÁNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-troc-am-khong-giang.html"
+    },
+    {
+      "name": "CHỨNG TÝ DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG TÝ HƯ SINH PHONG Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-hu-sinh-phong0o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG TÝ KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG TÝ không ThànG HUYẾT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-khong-thong-huyet.html"
+    },
+    {
+      "name": "CHỨNG TÝ PHẾ KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-phe-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG TÝ THẬN DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-thand-uong-hu.html"
+    },
+    {
+      "name": "CHỨNG TỲ VỊ DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-vi-duong-hu.html"
+    },
+    {
+      "name": "CHỨNG TỲ VỊ HƯ HÀN Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-vi-hu-han-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG TỲ VỊ HƯ YẾU Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-vi-hu-yeu-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG TỲ VỊ THẤP NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-vi-thap=-nhiet.html"
+    },
+    {
+      "name": "CHỨNG TỲ VỊ THỰC TRỆ Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-ty-vi-thuc-tre-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG VỊ ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-am-hu.html"
+    },
+    {
+      "name": "CHỨNG VỊ CƯỜNG TỲ NHƯỢC",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-cuong-ty-nhuoc.html"
+    },
+    {
+      "name": "CHỨNG VỊ HÀN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-han.html"
+    },
+    {
+      "name": "CHỨNG VỊ HÒA THƯỢNG VIÊM Ở TRẺ EM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-hoa-thuong-viem-o-tre-em.html"
+    },
+    {
+      "name": "CHỨNG VỊ KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-khi-hu.html"
+    },
+    {
+      "name": "CHỨNG VỊ KHÍ PHƯƠNG NGHỊCH",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-khi-phuong-nghich.html"
+    },
+    {
+      "name": "CHỨNG VỊ NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vi-nhiet.html"
+    },
+    {
+      "name": "CHỨNG VỌNG ÂM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vong-am.html"
+    },
+    {
+      "name": "CHỨNG VỌNG DƯƠNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chungvongduong.html"
+    },
+    {
+      "name": "CHƯNG VỌNG DƯƠNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-vong-duong.html"
+    },
+    {
+      "name": "CHỨNG XUNG NHÂM không BÊN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-xung-nham-khong-ben.html"
+    },
+    {
+      "name": "CHƯNG XUNG NHÂM NHIỆT CHỨNG",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-xung-nham-nhiet-chung.html"
+    },
+    {
+      "name": "CHƯNG XUNG NHÂM Ứ THẤP NGƯNG TRỆ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-xung-nham-u-thap-ngung.html"
+    },
+    {
+      "name": "CHỨNG XUNG NHÂM Ứ TRỞ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-xung-nham-u-tro.html"
+    },
+    {
+      "name": "CHỨNG XUNG NHÂM HƯ SUY",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/chung-xung-nhan-hu-suy.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH ÂM HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhamhu.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH BĂNG HUYẾT",
+      "link": "https://amp.thaythuoccuaban.com/hoichungbenh/Hoichungbenhbanghuyet.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH DƯƠNG HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhduonghu.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH HUYẾT THẬN",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhhuyethan.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH HUYẾT HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhhuyethu.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH HUYẾT NHIỆT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhhuyetnhiet.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH HUYẾT TÁO",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhhuyettao.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH HUYẾT Ứ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhhuyetu.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH KHÍ HÃM",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhkhiham.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH KHÍ HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhkhihu.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH KHÍ NGHỊCH",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhkhinghich.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH KHÍ THOÁT",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhkhithoat.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH KHÍ TRỆ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungbenhkhitre.html"
+    },
+    {
+      "name": "HỘI CHỨNG BỆNH TÂM KHÍ ÂM ĐỀU HƯ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoi-chung-tam-khi-am-deu-hu.html"
+    },
+    {
+      "name": "HỘI CHỨNG XUNG NHÂM Ứ TRỞ",
+      "link": "https://www.thaythuoccuaban.com/hoichungbenh/hoichungxungnhamutro.html"
+    }
+  ]
+}

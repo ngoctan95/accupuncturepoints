@@ -45,7 +45,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tìm kiếm trong đông y trị bệnh"
+        android:hint="Tìm kiếm hội chứng bệnh"
         android:id="@+id/edtSearch"
         android:padding="15dp"
         android:textSize="15sp"/>
