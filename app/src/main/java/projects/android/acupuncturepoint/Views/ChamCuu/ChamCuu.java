@@ -1,4 +1,4 @@
-package projects.android.acupuncturepoint.Views.HoiChungBenh;
+package projects.android.acupuncturepoint.Views.ChamCuu;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -37,39 +37,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import projects.android.acupuncturepoint.Models.WebHTML.ChamCuuModel;
 import projects.android.acupuncturepoint.Models.WebHTML.HoiChungBenhModel;
+import projects.android.acupuncturepoint.Models.WebHTML.ViThuoc;
 import projects.android.acupuncturepoint.R;
+import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTrIBenhAdapter;
+import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTriBenh;
 import projects.android.acupuncturepoint.Views.MainView.MainActivity;
 
-public class HoiChungBenh extends AppCompatActivity {
+public class ChamCuu extends AppCompatActivity {
     private ImageView back;
     private TextView mTitle;
     private Toolbar toolbarTop;
-    private ListView hoiChungBenhList;
-    private List<HoiChungBenhModel> hoiChungBenhModels = new ArrayList<>();
-    private List<HoiChungBenhModel> hoiChungBenhModelsTemp = new ArrayList<>();
+    private ListView chamCuuList;
     private EditText edtSearch;
-    private HoiChungBenhAdapter hoiChungBenhAdapter;
+    private List<ChamCuuModel> chamCuuModels = new ArrayList<>();
+    private ChamCuuAdapter chamCuuAdapter;
+    private List<ChamCuuModel> chamCuuModelsTemp = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoi_chung_benh);
+        setContentView(R.layout.activity_cham_cuu);
         initStatusBar();
         edtSearch = findViewById(R.id.edtSearch);
         toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
         mTitle = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
         back = findViewById(R.id.back);
-        mTitle.setText("Hội chứng bệnh");
+        mTitle.setText("Châm cứu");
+        chamCuuList = findViewById(R.id.drugList);
         back.setOnClickListener(view -> {
             startActivity(new Intent(this, MainActivity.class));
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             finish();
         });
-        hoiChungBenhList = findViewById(R.id.drugList);
-
-        hoiChungBenhAdapter = new HoiChungBenhAdapter(getApplicationContext(), hoiChungBenhModels);
-        hoiChungBenhList.setAdapter(hoiChungBenhAdapter);
+        chamCuuAdapter = new ChamCuuAdapter(getApplicationContext(), chamCuuModels);
+        chamCuuList.setAdapter(chamCuuAdapter);
         loadJSONFromAsset(getApplicationContext());
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -80,21 +83,21 @@ public class HoiChungBenh extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (!edtSearch.getText().toString().isEmpty()) {
-                    hoiChungBenhModelsTemp = new ArrayList<>();
-                    for (int j = 0; j < hoiChungBenhModels.size(); j++) {
-                        if (hoiChungBenhModels.get(j).getName().toLowerCase().replace(" ", "").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ", "").trim())) {
-                            hoiChungBenhModelsTemp.add(hoiChungBenhModels.get(j));
+                    chamCuuModelsTemp = new ArrayList<>();
+                    for (int j = 0; j < chamCuuModels.size(); j++) {
+                        if (chamCuuModels.get(j).getName().toLowerCase().replace(" ", "").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ", "").trim())) {
+                            chamCuuModelsTemp.add(chamCuuModels.get(j));
                         }
                     }
-                    hoiChungBenhAdapter
-                            = new HoiChungBenhAdapter(getApplicationContext(), hoiChungBenhModelsTemp);
-                    hoiChungBenhAdapter.notifyDataSetChanged();
-                    hoiChungBenhList.setAdapter(hoiChungBenhAdapter);
+                    chamCuuAdapter
+                            = new ChamCuuAdapter(getApplicationContext(), chamCuuModelsTemp);
+                    chamCuuAdapter.notifyDataSetChanged();
+                    chamCuuList.setAdapter(chamCuuAdapter);
                 } else {
-                    hoiChungBenhAdapter
-                            = new HoiChungBenhAdapter(getApplicationContext(), hoiChungBenhModels);
-                    hoiChungBenhAdapter.notifyDataSetChanged();
-                    hoiChungBenhList.setAdapter(hoiChungBenhAdapter);
+                    chamCuuAdapter
+                            = new ChamCuuAdapter(getApplicationContext(), chamCuuModels);
+                    chamCuuAdapter.notifyDataSetChanged();
+                    chamCuuList.setAdapter(chamCuuAdapter);
                 }
             }
 
@@ -103,9 +106,9 @@ public class HoiChungBenh extends AppCompatActivity {
 
             }
         });
-        hoiChungBenhList.setOnItemClickListener((adapterView, view, i, l) -> {
-            HoiChungBenhModel viThuoc = (HoiChungBenhModel) adapterView.getAdapter().getItem(i);
-            final Dialog dialog = new Dialog(HoiChungBenh.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        chamCuuList.setOnItemClickListener((adapterView, view, i, l) -> {
+            ChamCuuModel viThuoc = (ChamCuuModel) adapterView.getAdapter().getItem(i);
+            final Dialog dialog = new Dialog(ChamCuu.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
             dialog.setContentView(R.layout.layout_dialog_vithuoc);
 
             // set the custom dialog components - text, image and button
@@ -132,49 +135,7 @@ public class HoiChungBenh extends AppCompatActivity {
 
             dialog.show();
         });
-    }
 
-    private String loadJSONFromAsset(Context context) {
-
-        String json = null;
-        try {
-            InputStream is = context.getResources().openRawResource(R.raw.hoichungbenh);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        JSONArray jsonArray;
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(json);
-            jsonArray = jsonObject.getJSONArray("HoiChungBenh");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                HoiChungBenhModel hoiChungBenhModel = new HoiChungBenhModel();
-                hoiChungBenhModel.setName(jsonObject1.getString("name"));
-                hoiChungBenhModel.setLink(jsonObject1.getString("link"));
-                hoiChungBenhModels.add(hoiChungBenhModel);
-                hoiChungBenhAdapter
-                        = new HoiChungBenhAdapter(getApplicationContext(), hoiChungBenhModels);
-                hoiChungBenhAdapter.notifyDataSetChanged();
-                hoiChungBenhList.setAdapter(hoiChungBenhAdapter);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return json;
-    }
-
-    public void logLargeString(String str) {
-        final int chunkSize = 3000;
-        for (int i = 0; i < str.length(); i += chunkSize) {
-            Log.d("====", str.substring(i, Math.min(str.length(), i + chunkSize)));
-        }
     }
 
     private void getDataFromLink(String link, TextView text) {
@@ -198,34 +159,8 @@ public class HoiChungBenh extends AppCompatActivity {
         }).start();
     }
 
-    private void getWebsite() {
-        new Thread(() -> {
-            final StringBuilder builder = new StringBuilder();
-
-            try {
-                JSONArray jsonArray = new JSONArray();
-                Document doc = Jsoup.connect("https://www.thaythuoccuaban.com/hoichungbenh/index.html").get();
-                Element element1 = doc.select("div[id=6] > p").last();
-                Elements element = element1.getElementsByTag("a");
-                for (int i = 0; i < element.size(); i++) {
-//                    Log.d("=====", String.valueOf(element.get(i)));
-//
-                    String string = "{ \"name\": " + "\"" + element.get(i).text() + "\" " + ",\n" + "\"link\": " + "\"" + element.get(i).attr("href") + "\" " + "},";
-                    Log.d("=====", string);
-
-                }
-
-            } catch (IOException e) {
-                builder.append("Error : ").append(e.getMessage()).append("\n");
-            }
-
-//            runOnUiThread(() -> Log.d("=======" + count, builder.toString()));
-//            runOnUiThread(() -> arrayAdapter.notifyDataSetChanged());
-        }).start();
-    }
-
     private String concatString(String data) {
-        int findPos = data.indexOf("Tham khảo ý kiến thầy thuốc");
+        int findPos = data.indexOf("Nơi mua bán vị thuốc");
         if (findPos > 0) {
             return String.valueOf(data.subSequence(0, findPos));
         }
@@ -244,5 +179,67 @@ public class HoiChungBenh extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
+    }
+
+    private void getWebsite() {
+        new Thread(() -> {
+            final StringBuilder builder = new StringBuilder();
+
+            try {
+                JSONArray jsonArray = new JSONArray();
+                Document doc = Jsoup.connect("https://www.thaythuoccuaban.com/chamcuu/index.htm").get();
+                Element element1 = doc.select("div[id=6]").last();
+                Elements element = element1.getElementsByTag("p");
+                for (int i = 0; i < element.size(); i++) {
+//                    Log.d("=====", String.valueOf(element.get(i)));
+//
+                    String string = "{ \"name\": " + "\"" + element.get(i).text() + "\" " + ",\n" + "\"link\": " + "\"" + element.get(i).getElementsByTag("a").attr("href") + "\" " + "},";
+                    Log.d("=====", string);
+
+                }
+
+            } catch (IOException e) {
+                builder.append("Error : ").append(e.getMessage()).append("\n");
+            }
+
+//            runOnUiThread(() -> Log.d("=======" + count, builder.toString()));
+//            runOnUiThread(() -> arrayAdapter.notifyDataSetChanged());
+        }).start();
+    }
+
+    private String loadJSONFromAsset(Context context) {
+
+        String json = null;
+        try {
+            InputStream is = context.getResources().openRawResource(R.raw.chamcuu);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        JSONArray jsonArray;
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+            jsonArray = jsonObject.getJSONArray("ChamCuu");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                ChamCuuModel chamCuuModel = new ChamCuuModel();
+                chamCuuModel.setName(jsonObject1.getString("name"));
+                chamCuuModel.setLink(jsonObject1.getString("link"));
+                chamCuuModels.add(chamCuuModel);
+                chamCuuAdapter
+                        = new ChamCuuAdapter(getApplicationContext(), chamCuuModels);
+                chamCuuAdapter.notifyDataSetChanged();
+                chamCuuList.setAdapter(chamCuuAdapter);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 }
