@@ -41,7 +41,13 @@
                 android:textSize="22sp"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tìm kiếm bài thuốc"
+        android:id="@+id/edtSearch"
+        android:padding="15dp"
+        android:textSize="15sp"/>
     <ListView
         android:id="@+id/drugList"
         android:layout_width="match_parent"

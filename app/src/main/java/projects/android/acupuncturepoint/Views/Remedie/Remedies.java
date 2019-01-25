@@ -76,7 +76,7 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
                 if (!edtSearch.getText().toString().isEmpty()) {
                     viThuocListTemp = new ArrayList<>();
                     for (int j = 0; j < viThuocList.size(); j++) {
-                        if (viThuocList.get(j).getName().toLowerCase().replace(" ","").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ","").trim())) {
+                        if (viThuocList.get(j).getName().toLowerCase().replace(" ", "").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ", "").trim())) {
                             viThuocListTemp.add(viThuocList.get(j));
                         }
                     }
@@ -178,7 +178,10 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
 
     private String concatString(String data) {
         int findPos = data.indexOf("Nơi mua bán vị thuốc");
-        return String.valueOf(data.subSequence(0, findPos));
+        if (findPos > 0) {
+            return String.valueOf(data.subSequence(0, findPos));
+        }
+        return "";
     }
 
     private void getWebsite() {

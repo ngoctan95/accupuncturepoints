@@ -13,12 +13,15 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -51,9 +54,11 @@ public class Drug extends AppCompatActivity {
     private Toolbar toolbarTop;
     private ListView drugList;
     private List<BaiThuoc> baiThuocList = new ArrayList<>();
+    private List<BaiThuoc> baiThuocListTemp = new ArrayList<>();
     private DrugAdapter arrayAdapter;
     private List<String> listLink = new ArrayList<>();
     private int count = 0;
+    private EditText edtSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,39 @@ public class Drug extends AppCompatActivity {
         String a = loadJSONFromAsset(getApplicationContext());
         showListBaiThuoc(a);
         listen();
+        edtSearch = findViewById(R.id.edtSearch);
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!edtSearch.getText().toString().isEmpty()) {
+                    baiThuocListTemp = new ArrayList<>();
+                    for (int j = 0; j < baiThuocList.size(); j++) {
+                        if (baiThuocList.get(j).getName().toLowerCase().replace(" ", "").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ", "").trim())) {
+                            baiThuocListTemp.add(baiThuocList.get(j));
+                        }
+                    }
+                    arrayAdapter
+                            = new DrugAdapter(getApplicationContext(), baiThuocListTemp);
+                    arrayAdapter.notifyDataSetChanged();
+                    drugList.setAdapter(arrayAdapter);
+                } else {
+                    arrayAdapter
+                            = new DrugAdapter(getApplicationContext(), baiThuocList);
+                    arrayAdapter.notifyDataSetChanged();
+                    drugList.setAdapter(arrayAdapter);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     private void vibrate() {
@@ -312,7 +350,11 @@ public class Drug extends AppCompatActivity {
 
     private String concatString(String data) {
         int findPos = data.indexOf("Tham khảo mua bán bài thuốc");
-        return String.valueOf(data.subSequence(0, findPos));
+        if (findPos > 0) {
+            return String.valueOf(data.subSequence(0, findPos));
+        } else {
+            return "";
+        }
     }
 
     void init() {
