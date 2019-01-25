@@ -28,8 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
                 android:clickable="true"
-                android:src="@drawable/ic_back"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:src="@drawable/ic_back"/>
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -41,6 +41,14 @@
                 android:textSize="22sp"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tìm kiếm vị thuốc"
+        android:id="@+id/edtSearch"
+        android:padding="15dp"
+        android:textSize="15sp"/>
 
     <ListView
         android:id="@+id/remediesList"

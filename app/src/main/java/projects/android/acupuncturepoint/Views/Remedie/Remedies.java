@@ -11,12 +11,15 @@ import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -49,8 +52,10 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
     private ListView remediesList;
     private RemediesPresenter remediesPresenter;
     private List<ViThuoc> viThuocList = new ArrayList<>();
+    private List<ViThuoc> viThuocListTemp = new ArrayList<>();
     private ViThuocAdapter arrayAdapter;
     private int count = 0;
+    private EditText edtSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +65,42 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
         initStatusBar();
 //        getWebsite();
         remediesPresenter.loadJSONFromAsset(getApplicationContext());
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!edtSearch.getText().toString().isEmpty()) {
+                    viThuocListTemp = new ArrayList<>();
+                    for (int j = 0; j < viThuocList.size(); j++) {
+                        if (viThuocList.get(j).getName().toLowerCase().replace(" ","").trim().contains(edtSearch.getText().toString().toLowerCase().replace(" ","").trim())) {
+                            viThuocListTemp.add(viThuocList.get(j));
+                        }
+                    }
+                    arrayAdapter
+                            = new ViThuocAdapter(getApplicationContext(), viThuocListTemp);
+                    arrayAdapter.notifyDataSetChanged();
+                    remediesList.setAdapter(arrayAdapter);
+                } else {
+                    arrayAdapter
+                            = new ViThuocAdapter(getApplicationContext(), viThuocList);
+                    arrayAdapter.notifyDataSetChanged();
+                    remediesList.setAdapter(arrayAdapter);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     void init() {
+        edtSearch = findViewById(R.id.edtSearch);
         toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
         mTitle = (TextView) toolbarTop.findViewById(R.id.toolbar_title);
         back = findViewById(R.id.back);

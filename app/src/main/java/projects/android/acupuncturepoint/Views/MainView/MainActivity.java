@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -34,6 +35,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.bogdwellers.pinchtozoom.ImageMatrixTouchHandler;
 
 import java.util.List;
 
@@ -141,6 +144,49 @@ public class MainActivity extends AppCompatActivity
         Context context = imgLink.getContext();
         int id = context.getResources().getIdentifier(accupuncturePoint.getImgLink(), "drawable", context.getPackageName());
         imgLink.setImageResource(id);
+
+        BitmapFactory.Options myOptions = new BitmapFactory.Options();
+        myOptions.inDither = true;
+        myOptions.inScaled = false;
+        myOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;// important
+        myOptions.inPurgeable = true;
+
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.front, myOptions);
+//        Paint paint = new Paint();
+//        paint.setAntiAlias(true);
+//        paint.setColor(Color.YELLOW);
+//
+//
+//        Bitmap workingBitmap = Bitmap.createBitmap(bitmap);
+//        Bitmap mutableBitmap = workingBitmap.copy(Bitmap.Config.ARGB_8888, true);
+//
+//        DisplayMetrics displayMetrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+//        height = displayMetrics.heightPixels;
+//        width = displayMetrics.widthPixels;
+//
+//        float delX = (float) ((1080*1.0) / width);
+//        float delY = (float) ((2035 * 1.0 )/ height);
+//        Canvas canvas = new Canvas(mutableBitmap);
+//        canvas.drawCircle(Float.parseFloat(String.valueOf(Float.parseFloat(accupuncturePoint.getX()) * 1.898)),
+//                Float.parseFloat(String.valueOf(Float.parseFloat(accupuncturePoint.getY()) * 1.65)),
+//                7,
+//                paint);
+//
+//
+//        img1.setAdjustViewBounds(true);
+//        img1.setImageBitmap(mutableBitmap);
+    }
+
+    final float[] getPointOfTouchedCordinate(ImageView view, MotionEvent e) {
+        final int index = e.getActionIndex();
+        final float[] coords = new float[]{e.getX(index), e.getY(index)};
+        Matrix m = new Matrix();
+        view.getImageMatrix().invert(m);
+        m.postTranslate(view.getScrollX(), view.getScrollY());
+        m.mapPoints(coords);
+        return coords;
+
     }
 
     @Override
@@ -342,6 +388,10 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case MotionEvent.ACTION_UP:
                         mainPresenter.findAcupuncturePoint(event.getX(), event.getY(), currentImg, width, height);
+
+                        float[] points = getPointOfTouchedCordinate(view, event);
+                        Log.d("=============", "///" + points[0] + " __ " + points[1]);
+//                        return false;
                         break;
                     case MotionEvent.ACTION_POINTER_UP:
                         mode = NONE;
@@ -376,7 +426,7 @@ public class MainActivity extends AppCompatActivity
                                 if (newDist > 10f) {
                                     float scale = newDist / oldDist * view.getScaleX();
                                     Log.d("=", String.valueOf(scale));
-                                    if (scale > 0.8) {
+                                    if (scale > 1 && scale < 5) {
                                         scalediff = scale;
                                         view.setScaleX(scale);
                                         view.setScaleY(scale);
@@ -405,6 +455,7 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
         });
+//        imageView.setOnTouchListener(new ImageMatrixTouchHandler(getApplicationContext()));
     }
 
 
