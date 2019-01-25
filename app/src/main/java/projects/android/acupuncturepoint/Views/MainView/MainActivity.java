@@ -43,6 +43,7 @@ import java.util.List;
 import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
+import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTriBenh;
 import projects.android.acupuncturepoint.Views.Drug.Drug;
 import projects.android.acupuncturepoint.Views.Remedie.Remedies;
 
@@ -518,6 +519,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.acupuncturePoint) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
+        } else if (id == R.id.treatment) {
+            startActivity(new Intent(this, DongYTriBenh.class));
         } else if (id == R.id.medicines) {
             startActivity(new Intent(this, Remedies.class));
         } else if (id == R.id.remedies) {

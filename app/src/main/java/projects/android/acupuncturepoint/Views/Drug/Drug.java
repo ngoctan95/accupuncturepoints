@@ -353,7 +353,7 @@ public class Drug extends AppCompatActivity {
         if (findPos > 0) {
             return String.valueOf(data.subSequence(0, findPos));
         } else {
-            return "";
+            return data;
         }
     }
 
