@@ -16,6 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Views.Comments.Comments">
+        </activity>
         <activity
             android:name=".Views.Books.Books"
             android:theme="@style/AppTheme.NoActionBar">
@@ -37,7 +39,7 @@
         <activity
             android:name=".Views.Login.LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -94,13 +96,13 @@
         <meta-data
             android:name="com.zing.zalo.zalosdk.appID"
             android:value="@string/appID"/>
+
         <activity
             android:name="com.zing.zalo.zalosdk.oauth.WebLoginActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="sensor"
             android:theme="@style/FixThemeForLoginWebview"
-            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
-            >
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
         </activity>
     </application>
 

@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_share_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_person_pin_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,8 +44,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_share" />
-                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="outputName" value="ic_person" />
+                                      <entry key="theme" value="HOLO_DARK" />
                                       <entry key="themeColor" value="2196f3" />
                                     </map>
                                   </option>

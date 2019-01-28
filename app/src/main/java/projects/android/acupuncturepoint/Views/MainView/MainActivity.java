@@ -45,6 +45,7 @@ import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
 import projects.android.acupuncturepoint.Views.Books.Books;
 import projects.android.acupuncturepoint.Views.ChamCuu.ChamCuu;
+import projects.android.acupuncturepoint.Views.Comments.Comments;
 import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTriBenh;
 import projects.android.acupuncturepoint.Views.Drug.Drug;
 import projects.android.acupuncturepoint.Views.HoiChungBenh.HoiChungBenh;
@@ -533,7 +534,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, HoiChungBenh.class));
         } else if (id == R.id.medicines) {
             startActivity(new Intent(this, Remedies.class));
-        } else  if (id == R.id.logout){
+        } else if (id == R.id.contributor) {
+            startActivity(new Intent(this, Comments.class));
+        } else if (id == R.id.logout) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         } else if (id == R.id.remedies) {

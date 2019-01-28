@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private GoogleApiClient mGoogleApiClient;
     private SignInButton btnSignIn;
     private static final int RC_SIGN_IN = 007;
+    private EditText email, pass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +64,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         btnSignIn.setSize(SignInButton.SIZE_STANDARD);
         btnSignIn.setScopes(gso.getScopeArray());
         btnSignIn.setOnClickListener(view -> signIn());
-
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.pass);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
@@ -68,7 +73,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
         Button btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, MainActivity.class)));
+        btnLogin.setOnClickListener(view -> {
+            if (email.getText().toString().trim().equals(getString(R.string.hello) + getString(R.string.welcome) +"@gmail.com") && (
+                    pass.getText().toString().trim().equals(getString(R.string.lack_of) + getString(R.string.nutshell)))) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            } else {
+                Toast.makeText(getApplicationContext(), "Sai mật khẩu hoặc mã", Toast.LENGTH_LONG).show();
+            }
+        });
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
         if (isLoggedIn) {
@@ -80,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     private void handleSignInResult(GoogleSignInResult result) {
         Log.d("", "handleSignInResult:" + result.isSuccess());
         if (result.isSuccess()) {
@@ -98,6 +111,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);

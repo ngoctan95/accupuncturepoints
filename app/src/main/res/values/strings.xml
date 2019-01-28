@@ -8,8 +8,15 @@
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="welcome">hujila</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook_app_id">1994501467531972</string>
+    <string name="nutshell">nut</string>
     <string name="fb_login_protocol_scheme">fb1994501467531972</string>
     <string name="appID">z73ZVI21CLUVpL1XD2RV</string>
+
+    <string name="hello">su</string>
+
+    <string name="lack_of">do</string>
 </resources>
