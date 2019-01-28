@@ -47,5 +47,12 @@
                 android:title="Thư viện sách y khoa"/>
         </menu>
     </item>
-
+    <item android:title="Thêm">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Đăng xuất"/>
+        </menu>
+    </item>
 </menu>

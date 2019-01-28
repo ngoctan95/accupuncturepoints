@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "476754479495",
+    "firebase_url": "https://accupuncture.firebaseio.com",
+    "project_id": "accupuncture",
+    "storage_bucket": "accupuncture.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476754479495:android:4e4d3daea6ed54bf",
+        "android_client_info": {
+          "package_name": "projects.android.acupuncturepoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476754479495-pbv7p5de8a63g497amb20o0ofqvmrl3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "projects.android.acupuncturepoint",
+            "certificate_hash": "fb7d617d1dbb2badee2bad410a561951815a6355"
+          }
+        },
+        {
+          "client_id": "476754479495-jg83fd9jal006u8irnn4ea5jo4r2e8n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjPYX_xidC9Msug7k8Wah08tn63eNYs6k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476754479495-jg83fd9jal006u8irnn4ea5jo4r2e8n2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

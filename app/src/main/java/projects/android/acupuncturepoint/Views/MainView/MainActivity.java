@@ -43,10 +43,12 @@ import java.util.List;
 import projects.android.acupuncturepoint.Models.AccupuncturePointData.AccupuncturePoint;
 import projects.android.acupuncturepoint.Presenters.MainPresenter.MainPresenter;
 import projects.android.acupuncturepoint.R;
+import projects.android.acupuncturepoint.Views.Books.Books;
 import projects.android.acupuncturepoint.Views.ChamCuu.ChamCuu;
 import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTriBenh;
 import projects.android.acupuncturepoint.Views.Drug.Drug;
 import projects.android.acupuncturepoint.Views.HoiChungBenh.HoiChungBenh;
+import projects.android.acupuncturepoint.Views.Login.LoginActivity;
 import projects.android.acupuncturepoint.Views.Remedie.Remedies;
 
 public class MainActivity extends AppCompatActivity
@@ -523,12 +525,17 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.treatment) {
             startActivity(new Intent(this, DongYTriBenh.class));
+        } else if (id == R.id.book) {
+            startActivity(new Intent(this, Books.class));
         } else if (id == R.id.fire) {
             startActivity(new Intent(this, ChamCuu.class));
         } else if (id == R.id.sick) {
             startActivity(new Intent(this, HoiChungBenh.class));
         } else if (id == R.id.medicines) {
             startActivity(new Intent(this, Remedies.class));
+        } else  if (id == R.id.logout){
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
         } else if (id == R.id.remedies) {
             startActivity(new Intent(this, Drug.class));
         } else {

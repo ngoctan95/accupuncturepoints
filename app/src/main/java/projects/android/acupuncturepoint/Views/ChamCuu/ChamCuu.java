@@ -23,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.facebook.share.widget.ShareButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -110,7 +112,13 @@ public class ChamCuu extends AppCompatActivity {
             ChamCuuModel viThuoc = (ChamCuuModel) adapterView.getAdapter().getItem(i);
             final Dialog dialog = new Dialog(ChamCuu.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
             dialog.setContentView(R.layout.layout_dialog_vithuoc);
+            ShareButton btnShare = dialog.findViewById(R.id.btnShare);
+            btnShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                }
+            });
             // set the custom dialog components - text, image and button
             TextView text = (TextView) dialog.findViewById(R.id.text);
             if (!isNetworkAvailable(getApplicationContext())) {

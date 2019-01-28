@@ -24,6 +24,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.zing.zalo.zalosdk.oauth.FeedData;
+import com.zing.zalo.zalosdk.oauth.OpenAPIService;
+import com.zing.zalo.zalosdk.oauth.ZaloPluginCallback;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,6 +67,14 @@ public class Remedies extends AppCompatActivity implements IViewRemedie {
         setContentView(R.layout.activity_remedies);
         init();
         initStatusBar();
+        FeedData feed = new FeedData();
+        feed.setMsg("Prefill message");
+        feed.setLink("https://news.zing.vn");
+        feed.setLinkTitle("Zing News");
+        feed.setLinkSource("https://news.zing.vn");
+        feed.setLinkThumb(new String[] {"https://img.v3.news.zdn.vn/w660/Uploaded/xpcwvovb/2015_12_15/cua_kinh_2.jpg"});
+//        OpenAPIService.getInstance().shareFeed(this, feed, mCallBack);
+
 //        getWebsite();
         remediesPresenter.loadJSONFromAsset(getApplicationContext());
         edtSearch.addTextChangedListener(new TextWatcher() {

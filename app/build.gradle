@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -41,4 +42,14 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.10.1'
     implementation 'com.facebook.android:facebook-login:[4,5)'
     implementation 'com.bogdwellers:pinchtozoom:0.1'
+    implementation 'com.facebook.android:facebook-share:[4,5)'
+    implementation "com.zing.zalo.zalosdk:core:2.4.2501"
+    implementation "com.zing.zalo.zalosdk:auth:2.4.2501"
+    implementation "com.zing.zalo.zalosdk:authext:2.4.2501"
+    implementation "com.zing.zalo.zalosdk:analytics:2.4.2501"
+    implementation "com.zing.zalo.zalosdk:openapi:2.4.2501"
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 }
+apply plugin: 'com.google.gms.google-services'

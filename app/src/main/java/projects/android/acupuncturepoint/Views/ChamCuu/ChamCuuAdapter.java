@@ -11,9 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import projects.android.acupuncturepoint.Models.WebHTML.ChamCuuModel;
-import projects.android.acupuncturepoint.Models.WebHTML.DongYTriBenh;
 import projects.android.acupuncturepoint.R;
-import projects.android.acupuncturepoint.Views.DongyTriBenh.DongYTrIBenhAdapter;
 
 public class ChamCuuAdapter extends BaseAdapter {
 

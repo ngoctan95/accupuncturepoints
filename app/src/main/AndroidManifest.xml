@@ -9,12 +9,23 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
+        android:name="com.zing.zalo.zalosdk.oauth.ZaloSDKApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_accupoint"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Views.Books.Books"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider{1994501467531972}"
+            android:exported="true"/>
+
         <activity
             android:name=".Views.ChamCuu.ChamCuu"
             android:theme="@style/AppTheme.NoActionBar">
@@ -73,6 +84,23 @@
         <activity
             android:name=".Views.DongyTriBenh.DongYTriBenh"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.zing.zalo.zalosdk.oauth.OpenAPIActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+
+        <meta-data
+            android:name="com.zing.zalo.zalosdk.appID"
+            android:value="@string/appID"/>
+        <activity
+            android:name="com.zing.zalo.zalosdk.oauth.WebLoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/FixThemeForLoginWebview"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            >
         </activity>
     </application>
 
